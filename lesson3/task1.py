@@ -16,18 +16,18 @@ num_translate_dict = {'one': 'один', 'two': 'два', 'three': 'три', 'fo
 
 
 def num_translate(num):
-    print(num_translate_dict.get(num))
+    return num_translate_dict.get(num)
 
 
 # Выборочная проверка
 
-num_translate('one')
-num_translate('three')
-num_translate('five')
-num_translate('seven')
-num_translate('nine')
+print(num_translate('one'))
+print(num_translate('three'))
+print(num_translate('five'))
+print(num_translate('seven'))
+print(num_translate('nine'))
 
 # Проверим вывод None при невозможности перевести
 
-num_translate('e')
-num_translate(42)
+print(num_translate('e'))
+print(num_translate(42))

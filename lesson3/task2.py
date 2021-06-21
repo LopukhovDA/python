@@ -14,16 +14,16 @@ num_translate_dict = {'one': 'один', 'two': 'два', 'three': 'три', 'fo
 
 def num_translate_adv(num):
     if num.istitle() and num.lower() in num_translate_dict.keys():
-        print(num_translate_dict.get(num.lower()).capitalize())
+        return num_translate_dict.get(num.lower()).capitalize()
     else:
-        print(num_translate_dict.get(num))
+        return num_translate_dict.get(num)
 
 
 # Проверим работу функции
-num_translate_adv('Two')
-num_translate_adv('one')
-num_translate_adv('Nine')
+print(num_translate_adv('Two'))
+print(num_translate_adv('one'))
+print(num_translate_adv('Nine'))
 
 # Проверим вывод None
-num_translate_adv('j')
-num_translate_adv('Joker')
+print(num_translate_adv('j'))
+print(num_translate_adv('Joker'))

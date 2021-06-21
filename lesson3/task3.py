@@ -11,15 +11,18 @@ thesaurus("Иван", "Мария", "Петр", "Илья")
 """
 
 
-def thesaurus(*args):
+def thesaurus(*args, sort=False):
     thesaurus_dict = {}
     for name in args:
         if name.istitle() and name.isalpha():
             if not (name[0] in thesaurus_dict.keys()):
                 thesaurus_dict[name[0]] = []
             thesaurus_dict[name[0]].append(name)
-    return thesaurus_dict
+    if sort:
+        return sorted(thesaurus_dict.items())
+    else:
+        return thesaurus_dict
 
 
 print(thesaurus("Иван", "Мария", "Петр", "Илья", "Максим", "Павел"))
-print(sorted(thesaurus("Иван", "Мария", "Петр", "Илья", "Максим", "Павел").items()))
+print(thesaurus("Иван", "Мария", "Петр", "Илья", "Максим", "Павел", sort=True))

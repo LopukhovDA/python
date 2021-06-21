@@ -18,7 +18,7 @@ thesaurus_adv("Иван Сергеев", "Инна Серова", "Петр Ал
 """
 
 
-def thesaurus_adv(*args):
+def thesaurus_adv(*args, sort=False):
     thesaurus_dict_adv = {}
     for name_surname in args:
         name, surname = name_surname.split()
@@ -29,8 +29,11 @@ def thesaurus_adv(*args):
                 if not (name[0] in thesaurus_dict_adv[surname[0]].keys()):
                     thesaurus_dict_adv[surname[0]][name[0]] = []
                 thesaurus_dict_adv[surname[0]][name[0]].append(name_surname)
-    return thesaurus_dict_adv
+    if sort:
+        return sorted(thesaurus_dict_adv.items())
+    else:
+        return thesaurus_dict_adv
 
 
 print(thesaurus_adv("Иван Сергеев", "Инна Серова", "Петр Алексеев", "Илья Иванов", "Анна Савельева"))
-print(sorted(thesaurus_adv("Иван Сергеев", "Инна Серова", "Петр Алексеев", "Илья Иванов", "Анна Савельева").items()))
+print(thesaurus_adv("Иван Сергеев", "Инна Серова", "Петр Алексеев", "Илья Иванов", "Анна Савельева", sort=True))

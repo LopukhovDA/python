@@ -31,7 +31,7 @@ def get_jokes(n=1, allow_repeat=True):
     adjectives_f = adjectives[:]
     if not allow_repeat and n > 5:
         print('Извините, вы требуете невозможного')
-        return False
+        return
     jokes = []
     for i in range(n):
         if allow_repeat:
@@ -42,11 +42,11 @@ def get_jokes(n=1, allow_repeat=True):
             nouns_f.remove(noun)
             adverbs_f.remove(adverb)
             adjectives_f.remove(adjective)
-    print(jokes)
+    return jokes
 
 
-get_jokes(3)
-get_jokes(4, allow_repeat=False)
-get_jokes(allow_repeat=False, n=5)
-get_jokes(6)
-get_jokes(allow_repeat=False, n=6)
+print(get_jokes(3))
+print(get_jokes(4, allow_repeat=False))
+print(get_jokes(allow_repeat=False, n=5))
+print(get_jokes(6))
+print(get_jokes(allow_repeat=False, n=6))
